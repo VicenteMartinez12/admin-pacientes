@@ -1,5 +1,14 @@
 <script setup>
 
+import { reactive } from 'vue';
+
+const paciente= reactive({
+    nombre:''
+
+})
+
+
+
 </script>
 
 
@@ -14,7 +23,7 @@
         </p>
 
         <form class="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
-
+            {{ paciente.nombre }}
             <div class="mb-5">
                 <label 
                 class="block text-gray-700 uppercase font-bold"
@@ -27,7 +36,7 @@
                 type="text"
                 placeholder="Nombre de la mascota"
                 class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                
+                v-model="nombre"
                 
                 />
 
@@ -106,7 +115,14 @@
 
             </div>
 
-                        
+            <input
+                type="submit"
+                class="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700
+                cursor-pointer transition-colors"
+                value="Registrar Paciente "
+            
+            
+            />
 
         </form>
 
